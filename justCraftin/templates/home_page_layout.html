@@ -1,0 +1,119 @@
+{% load static %}
+<section class="section-p1" id="feature">
+	<div class="fe-box">
+		<img src="{% static 'images/features/f1.png' %}">
+		<h6>Free Shipping</h6>
+	</div>
+	<div class="fe-box">
+		<img src="{% static 'images/features/f2.jfif' %}">
+		<h6>Online Order</h6>
+	</div>
+	<div class="fe-box">
+		<img src="{% static 'images/features/f3.png' %}">
+		<h6>Save Money</h6>
+	</div>
+	<div class="fe-box">
+		<img src="{% static 'images/features/f4.png' %}">
+		<h6>Promotions</h6>
+	</div>
+	<div class="fe-box">
+		<img src="{% static 'images/features/f5.jpg' %}">
+		<h6>Happy Sell</h6>
+	</div>
+	<div class="fe-box">
+		<img src="{% static 'images/features/f6.avif' %}">
+		<h6>F24/7 Support</h6>
+	</div>
+</section>
+
+<section id="product1" class="section-p1">
+	<h2>Featured Products</h2>
+	<p>Summer Collection New Modern Design</p>
+	<div class="pro-container">
+		{% for product in featured_products %}
+		<a class="pro" href="{% url 'product_details' product.id %}">
+			<img src="{{ product.image.url }}">
+			<div class="description">
+				<span>adidas</span>
+				<h5>{{ product.title }}</h5>
+				<div class="star">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+				<h4>${{ product.price }}</h4>
+			</div>
+			<a href="#"><i class="fa-regular fa-cart-shopping cart"></i></a>
+		</a>
+		{% endfor %}
+	</div>
+	
+</section>
+<section id="banner" class="section-m1">
+	<h4>Repair Services</h4>
+	<h2>Up to <span>70% Off</span> on all products</h2>
+	<button class="normal">Explore More</button>
+	
+</section>
+<section id="product1" class="section-p1">
+	<h2>New Arrivals</h2>
+	<p>Summer Collection New Modern Design</p>
+	<div class="pro-container">
+		{% for product in new_arrivals %}
+		<a class="pro" href="{% url 'product_details' product.id %}">
+			<img src="{{ product.image.url }}">
+			<div class="description">
+				<span>adidas</span>
+				<h5>{{ product.title }}</h5>
+				<div class="star">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+				<h4>${{ product.price }}</h4>
+			</div>
+			<a href="#"><i class="fa-regular fa-cart-shopping cart"></i></a>
+		</a>
+		{% endfor %}
+		
+	</div>
+	
+</section>
+<section id="sm-banner" class="section-p1">
+	<div class="banner-box">
+		<h4>Crazy deals</h4>
+		<h2>Buy 1 get 1 free</h2>	
+		<span>The best classic product is on sale justCraftin</span>
+		<button class="white">Learn More</button>	
+	</div>
+	<div class="banner-box banner-box2">
+		<h4>spring/summer</h4>
+		<h2>Upcoming season</h2>	
+		<span>The best classic product is on sale justCraftin</span>
+		<button class="white">Collection</button>	
+	</div>
+</section>
+<section id="banner3">
+	<div class="banner-box ">
+		
+		<h2>SEASONAL SALE</h2>
+		<h3>Winter Collection - 50% OFF</h3>	
+		
+	</div>
+	<div class="banner-box banner-box2">
+		
+		<h2>NEW FOOTWEAR COLLECTION</h2>	
+		<h3>Spring/Summer 2024</h3>
+		
+	</div>
+	<div class="banner-box banner-box3">
+		
+		<h2>T-SHIRTS</h2>
+		<h3>New Trendy Prints</h3>	
+		
+	</div>
+</section>

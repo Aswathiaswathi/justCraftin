@@ -1,0 +1,38 @@
+
+{% load get_status %}
+<section id="page-header" class="about-header">
+    
+    <h2>#let's talk</h2>
+    
+    <p>LEAVE A MESSAGE, we love to hear from you</p>
+    
+</section>
+
+<section id="cart" class="section-p1">
+   {% if orders %}
+    <table width="100%">
+        <thead>
+            <tr>
+                <td>Order ID</td>
+                <td>Date</td>
+                <td>Total Price</td>
+                <td>Status</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.created_at }}</td>
+                <td>{{ order.total_price }}</td>
+                <td>{% get_status order.order_status %}</td>
+               
+            </tr>
+           {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No orders</p>
+    {% endif %}
+    
+</section>

@@ -1,0 +1,162 @@
+
+{% extends 'blank_layout.html' %}
+{% load static %}
+
+{% block styles2 %}
+<!-- <link rel="stylesheet" href="{% static 'css/style1.css' %}" type="text/css"> -->
+<style>
+ /* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 100vh;
+  width: 100%;
+}
+#account{
+  background:#b4afae;
+height: 600px;
+}
+
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  margin-top: 120px;
+}
+.container .registration{
+  display: none;
+}
+#check:checked ~ .registration{
+  display: block;
+}
+#check:checked ~ .login{
+  display: none;
+}
+#check{
+  display: none;
+}
+.container .form{
+  padding: 2rem;
+}
+.form header{
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+ .form input{
+   height: 60px;
+   width: 100%;
+   padding: 0 15px;
+   font-size: 17px;
+   margin-bottom: 1.3rem;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   outline: none;
+ }
+ .form input:focus{
+   box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+ }
+.form a{
+  font-size: 16px;
+  color: #a3386c;
+  text-decoration: none;
+}
+.form a:hover{
+  text-decoration: underline;
+}
+.form input.button{
+  color: #fff;
+  background:#a3386c;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 1.7rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.form input.button:hover{
+  background: #e51f8b;
+}
+.signup{
+  font-size: 17px;
+  text-align: center;
+}
+.signup label{
+  color: #a3386c;
+  cursor: pointer;
+}
+.signup label:hover{
+  text-decoration: underline;
+}
+.error{
+  color: red;
+}
+.success{
+  color: green;
+}
+</style>
+
+{% endblock styles2 %}
+
+{% block content%}
+<section id="account" class="section-p1">
+ <div class="container">
+    <input type="checkbox" id="check">
+    <div class="login form">
+      <header>Login</header>
+      <form action="#" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Enter Username">
+        <input type="password" name="password" placeholder="Enter your password">
+        <a href="#">Forgot password?</a>
+        <input type="submit" class="button" name="login" value="Login">
+      </form>
+      <div class="signup">
+        <span class="signup">Don't have an account?
+         <label for="check">Signup</label>
+        </span>
+      </div>
+    </div>
+    <div class="registration form">
+      <header>Signup</header>
+      <form action="#" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Enter Username" maxlength="10" minlength="3" required>
+        <input type="text" name="email" placeholder="Enter your email" required>
+        <input type="password" name="password" placeholder="Create a password" minlength="6" required>
+        <input type="text" name="address" placeholder="Enter your address" minlength="5" required>
+        <input type="text" name="phone" placeholder="Enter your Phone" minlength="5" required>
+
+        <input type="submit" class="button" name="register" value="Signup">
+        {% if messages %}
+        <div >
+          {% for message in messages %}
+          <li type="none" class="{{ message.tags }}">{{ message }}</li>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+         <label for="check">Login</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  </section>
+{% endblock content %}
+
+ 
+

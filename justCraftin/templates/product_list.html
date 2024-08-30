@@ -1,0 +1,45 @@
+{% load static %}
+<section id="page-header">
+	
+	<h2>#stayhome</h2>
+	
+	<p>Save more with coupens and upto 70% off!</p>
+	
+</section>
+<section id="product1" class="section-p1">
+	
+	<div class="pro-container">
+		{% for product in products %}
+		<a class="pro" href="{% url 'product_details' product.id %}">
+			<img src="{{ product.image.url }}">
+			<div class="description">
+				<span>adidas</span>
+				<h5>{{ product.title }}</h5>
+				<div class="star">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+				<h4>${{ product.price }}</h4>
+			</div>
+			<a href="#"><i class="fa-regular fa-cart-shopping cart"></i></a>
+		</a>
+		{% endfor %}
+		
+
+	</div>
+	
+</section>
+<section id="pagination" class="section-p1">
+	{% if products.has_previous %}
+	<a href="?page={{ products.previous_page_number }}">&lt;&lt;</a>
+	{% endif %}
+	{% for i in products.paginator.page_range %}
+	<a href="?page={{i}}">{{i}}</a>
+	{% endfor %}
+	{% if products.has_next %}
+	<a href="?page={{ products.next_page_number }}">&gt;&gt;</a>
+	{% endif %}
+</section>
