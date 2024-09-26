@@ -28,13 +28,13 @@
 
 <section id="product1" class="section-p1">
 	<h2>Featured Products</h2>
-	<p>Summer Collection New Modern Design</p>
+	<p>Exceptional Creations, Just for you</p>
 	<div class="pro-container">
 		{% for product in featured_products %}
 		<a class="pro" href="{% url 'product_details' product.id %}">
 			<img src="{{ product.image.url }}">
 			<div class="description">
-				<span>adidas</span>
+				<span>justCraftin</span>
 				<h5>{{ product.title }}</h5>
 				<div class="star">
 					<i class="fas fa-star"></i>
@@ -45,7 +45,7 @@
 				</div>
 				<h4>${{ product.price }}</h4>
 			</div>
-			<a href="#"><i class="fa-regular fa-cart-shopping cart"></i></a>
+			<button class="cart" ><i class="fa-solid fa-cart-shopping "></i></button>
 		</a>
 		{% endfor %}
 	</div>
@@ -59,13 +59,13 @@
 </section>
 <section id="product1" class="section-p1">
 	<h2>New Arrivals</h2>
-	<p>Summer Collection New Modern Design</p>
+	<p>Discover Our Latest Creations</p>
 	<div class="pro-container">
 		{% for product in new_arrivals %}
 		<a class="pro" href="{% url 'product_details' product.id %}">
 			<img src="{{ product.image.url }}">
 			<div class="description">
-				<span>adidas</span>
+				<span>justCraftin</span>
 				<h5>{{ product.title }}</h5>
 				<div class="star">
 					<i class="fas fa-star"></i>
@@ -76,7 +76,7 @@
 				</div>
 				<h4>${{ product.price }}</h4>
 			</div>
-			<a href="#"><i class="fa-regular fa-cart-shopping cart"></i></a>
+			<button class="cart"><i class="fa-solid fa-cart-shopping "></i></button>
 		</a>
 		{% endfor %}
 		
@@ -93,27 +93,27 @@
 	<div class="banner-box banner-box2">
 		<h4>spring/summer</h4>
 		<h2>Upcoming season</h2>	
-		<span>The best classic product is on sale justCraftin</span>
+		<span>Enjoy special discounts during our Seasonal Sale</span>
 		<button class="white">Collection</button>	
 	</div>
 </section>
 <section id="banner3">
 	<div class="banner-box ">
 		
-		<h2>SEASONAL SALE</h2>
-		<h3>Winter Collection - 50% OFF</h3>	
+		<h2>ECO-FRIENDLY PRODUCTS</h2>
+		<h3>Handcrafted from natural materials</h3>	
 		
 	</div>
 	<div class="banner-box banner-box2">
 		
-		<h2>NEW FOOTWEAR COLLECTION</h2>	
-		<h3>Spring/Summer 2024</h3>
+		<h2>CUSTOMIZED ITEMS</h2>	
+		<h3>Explore our range of customized Items</h3>
 		
 	</div>
 	<div class="banner-box banner-box3">
 		
-		<h2>T-SHIRTS</h2>
-		<h3>New Trendy Prints</h3>	
+		<h2>HANDMADE WITH CARE</h2>
+		<h3>Artisan crafted with care</h3>	
 		
 	</div>
 </section>

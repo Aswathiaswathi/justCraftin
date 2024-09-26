@@ -3,17 +3,25 @@
 	
 	<h2>#stayhome</h2>
 	
-	<p>Save more with coupens and upto 70% off!</p>
+	<p>Stayhome and browse our collections at anytime</p>
 	
 </section>
 <section id="product1" class="section-p1">
+		<div class="search-box" >
+			<div class="search-input">
+			<i class="fa-solid fa-magnifying-glass"></i>
+			<input type="text" id="searchproducts" placeholder="Search Products">
+			</div>
+			<button class="normal">Search</button>
+		</div>
+
 	
 	<div class="pro-container">
 		{% for product in products %}
 		<a class="pro" href="{% url 'product_details' product.id %}">
 			<img src="{{ product.image.url }}">
 			<div class="description">
-				<span>adidas</span>
+				<span>justCraftin</span>
 				<h5>{{ product.title }}</h5>
 				<div class="star">
 					<i class="fas fa-star"></i>
@@ -24,7 +32,7 @@
 				</div>
 				<h4>${{ product.price }}</h4>
 			</div>
-			<a href="#"><i class="fa-regular fa-cart-shopping cart"></i></a>
+			<button class="cart"><i class="fa-solid fa-cart-shopping"></i></button>
 		</a>
 		{% endfor %}
 		

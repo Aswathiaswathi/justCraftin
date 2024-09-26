@@ -5,10 +5,42 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>justCraftin</title>
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+<script>
+	 var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#searchproducts" ).autocomplete({
+      source: availableTags
+    });
+</script>
 
 	{% block styles2 %}
 {% endblock styles2 %}
@@ -35,7 +67,7 @@
 
 <footer id="" class="section-p1">
 	<div class="col">
-		<img src="{% static 'images/logo.jfif' %}" class="logo">
+		<img src="{% static 'images/logo2.png' %}" class="logo">
 		<h4>Contact</h4>
 		<p><strong>Address:</strong>562 Wellingbon Road,Street 32,San Francisco</p>
 		<p><strong>Phone:</strong>+012222365/(+91)0123456789</p>

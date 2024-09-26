@@ -4,16 +4,16 @@
 		<img src="{{ product.image.url }}" width="100%" id="main-img">
 		<div class="small-img-group">
 			<div class="small-img-col">
-				<img src="{% static 'images/products/p1.jfif' %}" width="100%" class="small-img">
+				<img src="{% static 'images/products/p22.jpg' %}" width="100%" class="small-img">
 			</div>
 			<div class="small-img-col">
-				<img src="{% static 'images/products/p2.jfif' %}" width="100%" class="small-img">
+				<img src="{% static 'images/products/p23.jpg' %}" width="100%" class="small-img">
 			</div>
 			<div class="small-img-col">
-				<img src="{% static 'images/products/p3.jfif' %}" width="100%" class="small-img">
+				<img src="{% static 'images/products/p24.jpg' %}" width="100%" class="small-img">
 			</div>
 			<div class="small-img-col">
-				<img src="{% static 'images/products/p4.jfif' %}" width="100%" class="small-img">
+				<img src="{% static 'images/products/p25.jpg' %}" width="100%" class="small-img">
 			</div>
 		</div>
 	</div>
@@ -46,7 +46,7 @@
 		<a class="pro" href="{% url 'product_details' product.id %}">
 			<img src="{{ product.image.url }}">
 			<div class="description">
-				<span>adidas</span>
+				<span>justCraftin</span>
 				<h5>{{ product.title }}</h5>
 				<div class="star">
 					<i class="fas fa-star"></i>
@@ -57,7 +57,7 @@
 				</div>
 				<h4>${{ product.price }}</h4>
 			</div>
-			<a href="#"><i class="fa-regular fa-cart-shopping cart"></i></a>
+			<button class="cart"><i class="fa-solid fa-cart-shopping"></i></button>
 		</a>
 		{% endfor %}
 
