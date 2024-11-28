@@ -1,6 +1,6 @@
 {% load static %}
 <section id="header" >
-    <a href="#"><img src="{% static 'images/logo2.png' %}" class="logo"></a>	
+    <a href="#" id="home_logo"><img src="{% static 'images/logo2.png' %}" class="logo">justCraftin</a>	
     <div>
         <ul id="navbar">
             <li><a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>

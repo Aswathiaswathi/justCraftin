@@ -21,11 +21,9 @@ def show_account(request):
 
             #creates customer account
             customer=Customer.objects.create(user=user,address=address,phone=phone)
-            success_message="User registered successfully"
-            messages.success(request,success_message)
+            messages.success(request,"User registered successfully")
         except Exception as e:
-            error_message="Duplicate username or invalid inputs"
-            messages.error(request,error_message)
+            messages.error(request,"Duplicate username or invalid inputs")
     if request.POST and 'login' in request.POST:
         context['register']=False
         username=request.POST.get('username')
@@ -35,8 +33,7 @@ def show_account(request):
             login(request,user)
             return redirect('home')
         else:
-            error_message="Invalid user credentials"
-            messages.error(request,error_message)
+            messages.error(request,"Invalid user credentials")
 
     return render(request,'account.html',context)
 def sign_out(request):

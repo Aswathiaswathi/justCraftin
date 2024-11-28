@@ -7,16 +7,20 @@
 	
 </section>
 <section id="product1" class="section-p1">
-		<div class="search-box" >
-			<div class="search-input">
-			<i class="fa-solid fa-magnifying-glass"></i>
-			<input type="text" id="searchproducts" placeholder="Search Products">
-			</div>
-			<button class="normal">Search</button>
+		<div  >
+			<form class="search-box" action="products_list" method="POST">
+				{% csrf_token %}
+				<div class="search-input">
+				<i class="fa-solid fa-magnifying-glass"></i>
+				<input type="text" id="searchproducts" name="searchpro" placeholder="Search Products">
+				</div>
+				<input type="submit" id="searchbutton" class="normal" value="Search">
+			</form>
 		</div>
 
 	
 	<div class="pro-container">
+		{% if products %}
 		{% for product in products %}
 		<a class="pro" href="{% url 'product_details' product.id %}">
 			<img src="{{ product.image.url }}">
@@ -35,8 +39,9 @@
 			<button class="cart"><i class="fa-solid fa-cart-shopping"></i></button>
 		</a>
 		{% endfor %}
-		
-
+	{%else%}
+	<p>Sorry... No items found!</p>
+	{% endif %}
 	</div>
 	
 </section>

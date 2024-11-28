@@ -9,14 +9,19 @@ def index(request):
     context={'featured_products':featured_products,'new_arrivals':new_arrivals}
     return render(request,'index.html',context)
 def products_list(request):
-    page=1
-    if request.GET:
-        page=request.GET.get('page',1)
+    page=request.GET.get('page',1)
     product_list=Product.objects.order_by('priority')
+        
+    if request.method=='POST':
+        search=request.POST.get('searchpro')
+        print(search)
+        product_list=Product.objects.filter(title__icontains=search)
     product_paginator=Paginator(product_list,8)
     product_list=product_paginator.get_page(page)
     context={'products':product_list}
     return render(request,'products.html',context)
+
+
 def product_details(request,pk):
     product=Product.objects.get(pk=pk)
     featured_products=Product.objects.order_by('priority')[:4]

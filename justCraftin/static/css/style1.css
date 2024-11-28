@@ -18,11 +18,7 @@ body{
   position: fixed;
   border: 1px solid black;
 }
-#account h1{
-  font-size: 70px;
-  background-color: lightblue;
-  color: red;
-}
+
 .container{
   position: absolute;
   top: 50%;
